@@ -9,20 +9,20 @@ class LoginForm extends React.Component {
       password: ""
     };
   }
-  
+
   handleInput = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
   }
-  
+
   confirmInput = () => ((this.state.username.length > 0) && (this.state.password.length > 0))
-  
+
   handleSubmit = event => {
-    event.preventDefault() 
-    if(this.confirmInput()) this.props.onSubmit(this.state) 
+    event.preventDefault()
+    if(this.confirmInput()) this.props.onSubmit(this.state)
   }
-  
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
         <div>
           <label>
             Password
-            <input id="password" name="password" type="password" 
+            <input id="password" name="password" type="password"
             value={this.state.password}
             onChange={this.handleInput}
             />
